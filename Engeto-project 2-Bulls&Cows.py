@@ -6,12 +6,13 @@ discord: lukardi.
 """
 
 import random
+#game definitons
 
 # separator definition
 separator = "-" * 60
 
-# welcome text
-welcome = print(f"Hi there!", separator,
+# welcome text definition
+welcome_text = print(f"Hi there!", separator,
                 "I've generated a random 4 digit number for you.",
                 "Let's play a bulls and cows game.",
                 separator,
@@ -27,21 +28,23 @@ def random_number():
 
 # player's input & check of compliance with the rules
 '''
-input can't:
-    - have more/less digits than 4
-    - contains exactly the same digits
-    - starts with 0
-    - contains characters other than digits
+Rules of the game:
+    Player can't:
+    - input less/more than exact 4 numbers (four-digit number)
+    - input number with duplicities
+    - input number starts with O (zero)
+    - input anything else than digits
 '''
+
 def players_input_check(input):
     if len(input) != 4 or not input.isdigit():
-        print(f"That's not a four digit number. Try again", separator, sep="\n")
+        print(f"Sorry, this is not a four-digit number. Try again!", separator, sep="\n")
         return False
     elif len(input) != len(set(input)):
-        print(f"You cannot input same digit twice. Try again", separator, sep="\n")
+        print(f"Sorry, you can't input same digit twice. Try again!", separator, sep="\n")
         return False
     elif input[0] == "0":
-        print(f"The number cannot start with zero. Try again", separator, sep="\n")
+        print(f"Number you're entering can't start with zero. Try again!", separator, sep="\n")
         return False
     else:
         return True
@@ -60,18 +63,20 @@ def bulls_and_cows_count(random_number, guess):
 # calculation - number of attempts
 def scorecard(number_of_attempts):
     if number_of_attempts <= 5:
-        print(f"Amazing score")
+        print(f"Wow, amazing!")
     elif number_of_attempts <= 10:
-        print(f"Well done")
+        print(f"Very good score!")
     elif number_of_attempts <= 15:
-        print(f"Not too bad")
+        print(f"Not too bad.")
+    elif number_of_attempts <= 20:
+        print(f"Not so good.")
     else:
-        print(f"Time to practice")
+        print(f"Eh - time to practice.")
 
 # game
 def game():
     # welcome the  player
-    welcome
+    welcome_text
     # generate random number
     number = random_number()
 
