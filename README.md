@@ -1,28 +1,33 @@
 # Engeto-project-2---Bulls&Cows
 Code for 2nd Engeto project - Bulls&Cows game
 
+**Čeština:**  
+> [Přečtěte si českou verzi README](README_cs.md)
+
+
 # Bulls & Cows game #
+## Project description ##
+Aim of this project is to create a program simulating the Bulls & Cows game.
+Player has to decode a secret four-digit number.
 
-## Popis projektu ##
-Cílem tohoto projektu je vytvořit program simulující hru Bulls&Cows. 
-Hřáč má za úkol rozluštit tajné čtyřciferné číslo.
+**Program description**: 
+- program greets the user and displays introductory text
+- program creates a secret four-digit number (numbers has to be unique and must not start with 0)
+- player guesses the number. Program will alert the player if:
+    - player enters a number shorter/longer than 4 digits
+    - number contains duplicates
+    - number starts with a zero
+    - number contains non-numeric characters
 
-Popis programu: 
-- program pozdraví uživatele a vypíše úvodní text
-- program vytvoří tajné 4místné číslo (číslice musí být unikátní a nesmí začínat 0)
-- hráč hádá číslo. Program jej upozorní, pokud:
-    - zadá číslo kratší nebo delší než 4 čísla
-    - bude číslo obsahovat duplicity
-    - bude číslo začínat nulou
-    - bude číslo obsahovat nečíselné znaky
-- program vyhodnotí tip uživatele
-- program dále vypíše počet bull/ bulls (pokud uživatel uhodne jak číslo, tak jeho umístění), příp. cows/ cows (pokud uživatel uhodne pouze číslo, ale ne jeho umístění). Vrácené ohodnocení musí brát ohled na jednotné a množné číslo ve výstupu. Tedy 1 bull a 2 bulls (stejně pro cow/cows)
-- jakmile hráč číslo uhodne, program mu pogratuluje a ukončí se
+- program evaluates player's guess
+- program will also display the number of bull/bulls (if user guessed right both the number and its location), or cow/cows (if user guessed only the correct number but not its location). Returned evaluation must take into account the singular and plural in the output - so 1 bull and 2 bulls (same for cow/cows).
+- once the player has guessed the number, program congratules the player and terminates
 
-- program rovněž počítá počet hráčových pokusů + na základě jejich počtu hodnotí jeho hru
-Hodnoty na škále:
-- počet pokusů <= 5 - Wow, amazing
-- počet pokusů <= 10 - Very good score
-- počet pokusů <= 15 - Not too bad
-- počet pokusů <= 20 - Not so good
-- počet pokusů > 20 - Time to practice
+- program also counts total number of the player's attempts + evaluates the player's game based on the number of attempts
+
+**Values on a scale**:
+- number of attempts <= 5 - Wow, amazing
+- number of attempts <= 10 - Very good score
+- number of attempts <= 15 - Not too bad
+- number of attempts <= 20 - Not so good
+- number of attempts > 20 - Time to practice
